@@ -1,3 +1,5 @@
-<x-layouts.app title="Influencer Agency">
-    @include('partials.hero')
-</x-layouts.app>
+@extends('layouts.app')
+
+@section('content')
+    @include('pages.hero')
+@endsection
