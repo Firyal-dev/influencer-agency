@@ -1,8 +1,8 @@
 <section class="z-50 fixed shadow-2xl w-full px-8 text-gray-300 bg-gray-900" {!! $attributes ?? '' !!}>
-    <div class="font-[inter] container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
+    <div class="font-[inter] container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl min-h-[80px]">
         <div class="relative flex flex-col md:flex-row">
             <a href="#_" class="flex items-center mb-5 font-medium text-white lg:w-auto lg:items-center lg:justify-center md:mb-0">
-                <span class="font-[poppins] mx-auto text-xl font-black leading-none text-white select-none">AdnFryl<span class="text-indigo-400" data-primary="indigo-400">.</span></span>
+                <img src="{{ asset('logo/logo.png') }}" alt="Logo" class="mx-auto h-12 w-auto object-contain">
             </a>
             <nav class="flex flex-wrap items-center mb-5 text-base md:mb-0 md:pl-8 md:ml-8 md:border-l md:border-gray-700">
                 <a href="#_" class="mr-5 font-medium leading-6 text-gray-400 hover:text-white">Beranda</a>
