@@ -22,6 +22,8 @@ class CampaignsTable
             ->columns([
                 TextColumn::make('judul')
                     ->searchable(),
+                TextColumn::make('deskripsi')
+                    ->limit(50),
                 ImageColumn::make('path_img')
                     ->label('Foto')
                     ->width(100)

@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Brands\Schemas;
 
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\TextArea;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Schemas\Schema;
@@ -19,9 +20,10 @@ class BrandForm
                     ->label('Foto')
                     ->image()
                     ->directory('brand_img'),
-                TextInput::make('produk_brand')
+                TextArea::make('deskripsi_brand')
                     ->required()
-                    ->label('Produk'),
+                    ->columnSpanFull()
+                    ->label('Deskripsi'),
                 Select::make('industri')
                     ->label('Industri')
                     ->required()

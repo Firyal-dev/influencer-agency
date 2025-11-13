@@ -38,15 +38,6 @@ class InfluencersTable
                 TextColumn::make('SocialAkuns.url')
                     ->label('Akun Sosial')
                     ->limit(20),
-                TextColumn::make('followers')
-                    ->sortable()
-                    ->formatStateUsing(fn($state) => match ($state) {
-                        '10000+' => '10.000+',
-                        '25000+' => '25.000+',
-                        '75000+' => '75.000+',
-                        '100000+' => '100.000+',
-                        default => $state,
-                    }),
                 TextColumn::make('kategori')
                     ->searchable()
                     ->formatStateUsing(fn($state) => match ($state) {

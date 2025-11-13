@@ -12,7 +12,6 @@ class Influencer extends Model
     protected $fillable = [
         'nama',
         'path_img',
-        'followers',
         'kategori',
     ];
 

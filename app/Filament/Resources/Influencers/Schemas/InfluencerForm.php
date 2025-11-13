@@ -38,15 +38,6 @@ class InfluencerForm
                             ->suffixIcon('heroicon-o-link')
                             ->url(),
                     ]),
-                Select::make('followers')
-                    ->label('Jumlah Pengikut')
-                    ->required()
-                    ->options([
-                        '10000+' => '10.000+',
-                        '25000+' => '25.000+',
-                        '75000+' => '75.000+',
-                        '100000+' => '100.000+',
-                    ]),
                 Select::make('kategori')
                     ->required()
                     ->options([

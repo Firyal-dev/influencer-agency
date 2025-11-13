@@ -14,7 +14,6 @@ class InfluencerSeeder extends Seeder
             [
                 'nama' => 'Anya Geraldine',
                 'path_img' => 'influencers_placeholder/influencers_placeholder.jpg',
-                'followers' => '100000+',
                 'kategori' => 'lifestyle',
                 'socials' => [
                     ['platform' => 'instagram', 'url' => 'https://instagram.com/anyageraldine'],
@@ -24,7 +23,6 @@ class InfluencerSeeder extends Seeder
             [
                 'nama' => 'Rachel Vennya',
                 'path_img' => 'influencers_placeholder/influencers_placeholder.jpg',
-                'followers' => '100000+',
                 'kategori' => 'lifestyle',
                 'socials' => [
                     ['platform' => 'instagram', 'url' => 'https://instagram.com/rachelvennya'],
@@ -34,7 +32,6 @@ class InfluencerSeeder extends Seeder
             [
                 'nama' => 'Awkarin',
                 'path_img' => 'influencers_placeholder/influencers_placeholder.jpg',
-                'followers' => '75000+',
                 'kategori' => 'fashion',
                 'socials' => [
                     ['platform' => 'instagram', 'url' => 'https://instagram.com/awkarin'],
@@ -44,7 +41,6 @@ class InfluencerSeeder extends Seeder
             [
                 'nama' => 'Tanboy Kun',
                 'path_img' => 'influencers_placeholder/influencers_placeholder.jpg',
-                'followers' => '100000+',
                 'kategori' => 'food',
                 'socials' => [
                     ['platform' => 'instagram', 'url' => 'https://instagram.com/tanboykun'],
@@ -54,7 +50,6 @@ class InfluencerSeeder extends Seeder
             [
                 'nama' => 'Gita Savitri',
                 'path_img' => 'influencers_placeholder/influencers_placeholder.jpg',
-                'followers' => '75000+',
                 'kategori' => 'education',
                 'socials' => [
                     ['platform' => 'youtube', 'url' => 'https://youtube.com/@gitasav'],
@@ -64,7 +59,6 @@ class InfluencerSeeder extends Seeder
             [
                 'nama' => 'Raditya Dika',
                 'path_img' => 'influencers_placeholder/influencers_placeholder.jpg',
-                'followers' => '100000+',
                 'kategori' => 'entertainment',
                 'socials' => [
                     ['platform' => 'instagram', 'url' => 'https://instagram.com/raditya_dika'],
@@ -74,7 +68,6 @@ class InfluencerSeeder extends Seeder
             [
                 'nama' => 'Suhay Salim',
                 'path_img' => 'influencers_placeholder/influencers_placeholder.jpg',
-                'followers' => '75000+',
                 'kategori' => 'beauty',
                 'socials' => [
                     ['platform' => 'instagram', 'url' => 'https://instagram.com/suhaysalim'],
@@ -84,7 +77,6 @@ class InfluencerSeeder extends Seeder
             [
                 'nama' => 'Arief Muhammad',
                 'path_img' => 'influencers_placeholder/influencers_placeholder.jpg',
-                'followers' => '100000+',
                 'kategori' => 'lifestyle',
                 'socials' => [
                     ['platform' => 'instagram', 'url' => 'https://instagram.com/ariefmuhammad'],
@@ -94,7 +86,6 @@ class InfluencerSeeder extends Seeder
             [
                 'nama' => 'Tasya Farasya',
                 'path_img' => 'influencers_placeholder/influencers_placeholder.jpg',
-                'followers' => '100000+',
                 'kategori' => 'beauty',
                 'socials' => [
                     ['platform' => 'instagram', 'url' => 'https://instagram.com/tasyafarasya'],
@@ -104,7 +95,6 @@ class InfluencerSeeder extends Seeder
             [
                 'nama' => 'Jerome Polin',
                 'path_img' => 'influencers_placeholder/influencers_placeholder.jpg',
-                'followers' => '100000+',
                 'kategori' => 'education',
                 'socials' => [
                     ['platform' => 'instagram', 'url' => 'https://instagram.com/jeromepolin'],

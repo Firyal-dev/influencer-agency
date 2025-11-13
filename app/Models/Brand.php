@@ -11,12 +11,17 @@ class Brand extends Model
 
     protected $fillable = [
         'nama_brand',
-        'produk_brand',
+        'deskripsi_brand',
         'industri',
-        'path_img'
+        'path_img',
+        'client_id'
     ];
 
     function campaigns() {
         return $this->hasMany(Campaign::class);
+    }
+
+    function client() {
+        return $this->belongsTo(Client::class);
     }
 }

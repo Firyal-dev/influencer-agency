@@ -11,20 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('brands', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_brand');
-            $table->string('deskripsi_brand')->nullable();
-            $table->string('industri');
-            $table->timestamps();
+        Schema::table('influencers', function (Blueprint $table) {
+            $table->dropColumn('followers');
         });
     }
-    
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('brands');
+        Schema::table('influencers', function (Blueprint $table) {
+            $table->string('followers');
+        });
     }
 };
