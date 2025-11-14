@@ -11,6 +11,8 @@ class Influencer extends Model
 
     protected $fillable = [
         'nama',
+        'email',
+        'no_hp',
         'path_img',
         'kategori',
     ];

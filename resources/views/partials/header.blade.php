@@ -13,7 +13,7 @@
                             Mulai Promosi
                             <x-heroicon-s-arrow-right class="w-4 h-4" />
                         </a>
-                        <a href="#_" class="flex items-center px-6 py-3 text-gray-300 bg-gray-800 rounded-md hover:bg-gray-700 hover:text-white" data-rounded="rounded-md">
+                        <a href="{{ route('layanan') }}" class="flex items-center px-6 py-3 text-gray-300 bg-gray-800 rounded-md hover:bg-gray-700 hover:text-white" data-rounded="rounded-md">
                             Pelajari Lebih Lanjut
                         </a>
                     </div>

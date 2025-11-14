@@ -16,6 +16,11 @@ class InfluencerForm
             ->components([
                 TextInput::make('nama')
                     ->required(),
+                TextInput::make('email')
+                    ->required(),
+                TextInput::make('no_hp')
+                    ->numeric()
+                    ->required(),
                 FileUpload::make('path_img')
                     ->label('Foto')
                     ->image()

@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignId('campaign_id')->constrained()->onDelete('cascade');
             $table->foreignId('influencer_id')->constrained()->onDelete('cascade');
             $table->unique(['influencer_id', 'campaign_id']);
-            $table->enum('status', ['diundang', 'ditolak', 'diterima', 'selesai']);
             $table->timestamps();
         });
     }

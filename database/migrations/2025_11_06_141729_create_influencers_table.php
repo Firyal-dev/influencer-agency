@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('influencers', function (Blueprint $table) {
             $table->id();
-            $table->string('nama')->unique();
+            $table->string('nama');
+            $table->string('email')->unique();
+            $table->string('no_hp')->unique();
             $table->string('path_img')->nullable();
-            $table->string('followers');
             $table->string('kategori');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

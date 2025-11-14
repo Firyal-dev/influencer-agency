@@ -22,6 +22,10 @@ class InfluencersTable
             ->columns([
                 TextColumn::make('nama')
                     ->searchable(),
+                TextColumn::make('email')
+                    ->searchable(),
+                TextColumn::make('no_hp')
+                    ->searchable(),
                 ImageColumn::make('path_img')
                     ->label('Foto')
                     ->width(100)

@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('campaigns', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('brand_id')->constrained()->onDelete('cascade');
+            $table->foreignId('client_id')->constrained()->onDelete('cascade');
             $table->string('judul');
             $table->text('deskripsi');
-            $table->decimal('budget', 15, 2);
             $table->enum('status', ['draft', 'aktif', 'selesai']);
-            $table->foreignId('brand_id')->constrained()->onDelete('cascade');
+            $table->string('path_img')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

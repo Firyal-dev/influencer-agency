@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('pages.hero');
-})->name('home');
 
+// home
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// layanan
 Route::get('/layanan', function () {
     return view('pages.layanan');
 })->name('layanan');

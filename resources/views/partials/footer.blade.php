@@ -4,7 +4,7 @@
             <img src="{{ asset('logo/logo.png') }}" alt="Logo" class="h-10 w-auto object-contain">
         </a>
         <p class="font-[inter] mt-4 text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-700 sm:mt-0">
-            &copy; {{ date('Y') }} AdnFryl - Influencer Marketing Platform <br>
+            &copy; {{ date('Y') }} Firanagency - Influencer Marketing Platform <br>
             +6281234567890
         </p>
         <span class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">

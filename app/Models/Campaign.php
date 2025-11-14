@@ -15,6 +15,7 @@ class Campaign extends Model
         'budget',
         'status',
         'brand_id',
+        'client_id',
         'path_img'
     ];
 
