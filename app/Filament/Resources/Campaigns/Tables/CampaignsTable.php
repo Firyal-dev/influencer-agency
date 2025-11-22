@@ -27,10 +27,8 @@ class CampaignsTable
                 ImageColumn::make('path_img')
                     ->label('Foto')
                     ->width(100)
+                    ->disk('public')
                     ->circular(),
-                TextColumn::make('budget')
-                    ->numeric()
-                    ->sortable(),
                 TextColumn::make('status')
                     ->badge()
                     ->color(fn(string $state): string => match ($state) {

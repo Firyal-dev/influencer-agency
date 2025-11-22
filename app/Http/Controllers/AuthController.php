@@ -4,63 +4,71 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-    /**
-     * Tampilkan halaman login
-     */
-    public function showLogin()
-    {
-        return view('auth.login');
-    }
-
-    /**
-     * Proses login
-     */
-    public function login(Request $request)
-    {
-        
-    }
-
-    /**
-     * Tampilkan halaman register
-     */
     public function showRegister()
     {
-        return view('auth.register');
+        return view('pages.register');
     }
 
-    /**
-     * Proses register
-     */
     public function register(Request $request)
     {
-        // Validasi input
-        Validator::make($request->all(), [
+        $request->validate([
             'nama_perusahaan' => 'required|string|max:255',
-            'email'           => 'required|email|unique:clients,email',
-            'no_hp'           => 'required|string|max:20|unique:clients,no_hp',
-            'password'        => 'required|string|min:8|confirmed',
+            'email' => 'required|email|unique:clients,email',
+            'no_hp' => 'required',
+            'password' => 'required|min:6',
         ]);
 
         Client::create([
             'nama_perusahaan' => $request->nama_perusahaan,
-            'email'           => $request->email,
-            'no_hp'           => $request->no_hp,
-            'password'        => Hash::make($request->password),
+            'email' => $request->email,
+            'no_hp' => $request->no_hp,
+            'password' => Hash::make($request->password),
         ]);
 
-        return view('pages.hero');
+        return redirect()->route('login')->with('success', 'Akun berhasil dibuat!');
     }
 
-    /**
-     * Proses logout
-     */
+    public function showLogin()
+    {
+        return view('pages.login');
+    }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $remember = $request->has('remember'); // checkbox remember me
+
+        if (Auth::guard('client')->attempt([
+            'email' => $request->email,
+            'password' => $request->password
+        ], $remember)) {
+
+            $request->session()->regenerate(); // keamanan wajib
+
+            return redirect()->route('home');
+        }
+
+        return back()->withErrors([
+            'email' => 'Email atau password salah.',
+        ]);
+    }
+
     public function logout(Request $request)
     {
-        
+        Auth::guard('client')->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('home'); // Sesuaikan dengan route name yang dipakai
     }
 }

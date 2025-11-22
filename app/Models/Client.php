@@ -2,24 +2,31 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable;
 
-class Client extends Model
+class Client extends Authenticatable
 {
-    use SoftDeletes, HasFactory, Notifiable;
-
     protected $fillable = [
         'nama_perusahaan',
         'email',
         'no_hp',
-        'password'
+        'password',
     ];
 
-    function brands() {
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    // Relasi dengan Campaign
+    public function campaigns()
+    {
+        return $this->hasMany(Campaign::class);
+    }
+    // Relasi dengan Brand
+    public function brands()
+    {
         return $this->hasMany(Brand::class);
     }
+
 }

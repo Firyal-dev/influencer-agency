@@ -6,6 +6,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Repeater;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class InfluencerForm
@@ -14,17 +15,16 @@ class InfluencerForm
     {
         return $schema
             ->components([
-                TextInput::make('nama')
-                    ->required(),
-                TextInput::make('email')
-                    ->required(),
-                TextInput::make('no_hp')
-                    ->numeric()
-                    ->required(),
-                FileUpload::make('path_img')
-                    ->label('Foto')
-                    ->image()
-                    ->directory('influencer_img'),
+                Section::make('Influencer Details')
+                    ->schema([
+                        TextInput::make('nama')
+                            ->required(),
+                        TextInput::make('email')
+                            ->required(),
+                        TextInput::make('no_hp')
+                            ->numeric()
+                            ->required(),
+                    ]),
                 Repeater::make('socialAkuns')
                     ->label('Akun Sosial')
                     ->relationship()
@@ -43,6 +43,11 @@ class InfluencerForm
                             ->suffixIcon('heroicon-o-link')
                             ->url(),
                     ]),
+                FileUpload::make('path_img')
+                    ->label('Foto')
+                    ->image()
+                    ->directory('influencer_img')
+                    ->disk('public'),
                 Select::make('kategori')
                     ->required()
                     ->options([

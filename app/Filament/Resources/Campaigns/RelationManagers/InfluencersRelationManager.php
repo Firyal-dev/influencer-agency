@@ -37,15 +37,8 @@ class InfluencersRelationManager extends RelationManager
                 ImageColumn::make('path_img')
                     ->label('Foto')
                     ->circular()
+                    ->disk('public')
                     ->width(100),
-                TextColumn::make('followers')
-                    ->formatStateUsing(fn($state) => match ($state) {
-                        '10000+' => '10.000+',
-                        '25000+' => '25.000+',
-                        '75000+' => '75.000+',
-                        '100000+' => '100.000+',
-                        default => $state,
-                    }),
                 TextColumn::make('kategori')
                     ->formatStateUsing(fn($state) => match ($state) {
                         'beauty' => 'Beauty',

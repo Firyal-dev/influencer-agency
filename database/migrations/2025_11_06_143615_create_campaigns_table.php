@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('client_id')->constrained()->onDelete('cascade');
             $table->string('judul');
             $table->text('deskripsi');
-            $table->enum('status', ['draft', 'aktif', 'selesai']);
+            $table->enum('status', ['draft', 'aktif', 'selesai'])->nullable()->default('draft');
             $table->string('path_img')->nullable();
             $table->timestamps();
             $table->softDeletes();

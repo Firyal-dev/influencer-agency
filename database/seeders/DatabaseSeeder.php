@@ -22,11 +22,5 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@example.com',
             'password' => Hash::make('12345678'),
         ]);
-
-        $this->call([
-            BrandSeeder::class,
-            InfluencerSeeder::class,
-            CampaignSeeder::class,
-        ]);
     }
 }

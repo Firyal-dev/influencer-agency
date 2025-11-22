@@ -22,6 +22,9 @@ class BrandsTable
             ->columns([
                 TextColumn::make('nama_brand')
                     ->searchable(),
+                TextColumn::make('client.nama_perusahaan')
+                    ->searchable()
+                    ->label('Pemilik'),
                 TextColumn::make('deskripsi_brand')
                     ->searchable()
                     ->limit(50)
@@ -29,6 +32,7 @@ class BrandsTable
                 ImageColumn::make('path_img')
                     ->label('Foto')
                     ->width(100)
+                    ->disk('public')
                     ->circular(),
                 TextColumn::make('industri')
                     ->searchable()

@@ -63,6 +63,7 @@
     </div>
 </section>
 
+@push('styles')    
 <style>
     .testimonial-container {
         mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
@@ -88,7 +89,9 @@
         }
     }
 </style>
+@endpush
 
+@push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const scrollContainer = document.querySelector('.testimonial-scroll');
@@ -98,3 +101,4 @@
         }
     });
 </script>
+@endpush

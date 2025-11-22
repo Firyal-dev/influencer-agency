@@ -6,6 +6,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\FileUpload;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class CampaignForm
@@ -14,29 +15,33 @@ class CampaignForm
     {
         return $schema
             ->components([
-                TextInput::make('judul')
-                    ->required(),
+                Section::make('Campaign Details')
+                    ->schema([
+                        TextInput::make('judul')
+                            ->required(),
+                        Textarea::make('deskripsi')
+                            ->required()
+                            ->columnSpanFull(),
+                    ]),
+                Section::make('Status')
+                    ->schema([
+                        Select::make('status')
+                            ->options([
+                                'draft' => 'Draft',
+                                'aktif' => 'Aktif',
+                                'selesai' => 'Selesai',
+                            ])
+                            ->required(),
+                        Select::make('brand_id')
+                            ->label('Brand')
+                            ->required()
+                            ->relationship('brand', 'nama_brand'),
+                    ]),
                 FileUpload::make('path_img')
                     ->label('Foto')
                     ->image()
+                    ->disk('public')
                     ->directory('campaign_img'),
-                Textarea::make('deskripsi')
-                    ->required()
-                    ->columnSpanFull(),
-                TextInput::make('budget')
-                    ->required()
-                    ->numeric(),
-                Select::make('status')
-                    ->options([
-                        'draft' => 'Draft',
-                        'aktif' => 'Aktif',
-                        'selesai' => 'Selesai',
-                    ])
-                    ->required(),
-                Select::make('brand_id')
-                    ->label('Brand')
-                    ->required()
-                    ->relationship('brand', 'nama_brand'),
             ]);
     }
 }

@@ -29,6 +29,7 @@ class InfluencersTable
                 ImageColumn::make('path_img')
                     ->label('Foto')
                     ->width(100)
+                    ->disk('public')
                     ->circular(),
                 TextColumn::make('SocialAkuns.platform')
                     ->label('Platform')

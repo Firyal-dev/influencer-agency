@@ -12,18 +12,20 @@ class Campaign extends Model
     protected $fillable = [
         'judul',
         'deskripsi',
-        'budget',
         'status',
         'brand_id',
         'client_id',
         'path_img'
     ];
-
+    
+    function client() {
+        return $this->belongsTo(Client::class);
+    }
     function brand() {
         return $this->belongsTo(Brand::class);
     }
-
     function influencers() {
         return $this->belongsToMany(Influencer::class, 'campaign_influencers')->withTimestamps();
     }
+
 }

@@ -6,6 +6,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\TextArea;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class BrandForm
@@ -14,37 +15,41 @@ class BrandForm
     {
         return $schema
             ->components([
-                TextInput::make('nama_brand')
-                    ->required(),
+                Section::make('Brand details')
+                    ->schema([
+                        TextInput::make('nama_brand')
+                            ->required(),
+                        TextArea::make('deskripsi_brand')
+                            ->required()
+                            ->columnSpanFull()
+                            ->label('Deskripsi'),
+                        Select::make('industri')
+                            ->label('Industri')
+                            ->required()
+                            ->options([
+                                'beauty & skincare' => 'Beauty & Skincare',
+                                'fashion & apparel' => 'Fashion & Apparel',
+                                'food & beverage' => 'Food & Beverage',
+                                'tech & rlectronics' => 'Tech & Electronics',
+                                'gaming & rntertainment' => 'Gaming & Entertainment',
+                                'travel & hospitality' => 'Travel & Hospitality',
+                                'health & fitness' => 'Health & Fitness',
+                                'finance & banking' => 'Finance & Banking',
+                                'education & e-Learning' => 'Education & E-Learning',
+                                'automotive' => 'Automotive',
+                                'home & living' => 'Home & Living',
+                                'e-commerce / retail' => 'E-commerce / Retail',
+                                'telecommunication' => 'Telecommunication',
+                                'nonprofit / ngo / social' => 'Nonprofit / NGO / Social',
+                                'real Estate / property' => 'Real Estate / Property',
+                                'luxury / lifestyle' => 'Luxury / Lifestyle',
+                            ])
+                    ]),
                 FileUpload::make('path_img')
                     ->label('Foto')
                     ->image()
+                    ->disk('public')
                     ->directory('brand_img'),
-                TextArea::make('deskripsi_brand')
-                    ->required()
-                    ->columnSpanFull()
-                    ->label('Deskripsi'),
-                Select::make('industri')
-                    ->label('Industri')
-                    ->required()
-                    ->options([
-                        'beauty & skincare' => 'Beauty & Skincare',
-                        'fashion & apparel' => 'Fashion & Apparel',
-                        'food & beverage' => 'Food & Beverage',
-                        'tech & rlectronics' => 'Tech & Electronics',
-                        'gaming & rntertainment' => 'Gaming & Entertainment',
-                        'travel & hospitality' => 'Travel & Hospitality',
-                        'health & fitness' => 'Health & Fitness',
-                        'finance & banking' => 'Finance & Banking',
-                        'education & e-Learning' => 'Education & E-Learning',
-                        'automotive' => 'Automotive',
-                        'home & living' => 'Home & Living',
-                        'e-commerce / retail' => 'E-commerce / Retail',
-                        'telecommunication' => 'Telecommunication',
-                        'nonprofit / ngo / social' => 'Nonprofit / NGO / Social',
-                        'real Estate / property' => 'Real Estate / Property',
-                        'luxury / lifestyle' => 'Luxury / Lifestyle',
-                    ])
             ]);
     }
 }

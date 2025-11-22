@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-@include('partials.layanan')
+    @include('partials.layanan.layanan')
 @endsection
