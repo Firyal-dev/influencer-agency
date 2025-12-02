@@ -4,6 +4,7 @@ namespace App\Filament\Widgets;
 
 use App\Models\Brand;
 use App\Models\Campaign;
+use App\Models\Client;
 use App\Models\Influencer;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
@@ -25,6 +26,10 @@ class StatsOverview extends StatsOverviewWidget
             ->description('Total Campaign')
             ->descriptionIcon('heroicon-o-megaphone')
             ->color('warning'),
+            Stat::make('Clients', Client::count())
+            ->description('Total Client')
+            ->descriptionIcon('heroicon-o-user-group')
+            ->color('danger'),
         ];
     }
 }

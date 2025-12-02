@@ -42,7 +42,7 @@ class InfluencerForm
                             ->required()
                             ->suffixIcon('heroicon-o-link')
                             ->url(),
-                    ]),
+                ]),
                 FileUpload::make('path_img')
                     ->label('Foto')
                     ->image()

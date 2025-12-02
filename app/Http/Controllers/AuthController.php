@@ -6,6 +6,7 @@ use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use SweetAlert2\Laravel\Swal;
 
 class AuthController extends Controller
 {
@@ -54,12 +55,20 @@ class AuthController extends Controller
 
             $request->session()->regenerate(); // keamanan wajib
 
+            Swal::success([
+                'theme' => 'dark',
+                'title' => 'Login berhasil!',
+            ]);
+
             return redirect()->route('home');
         }
 
-        return back()->withErrors([
-            'email' => 'Email atau password salah.',
+        Swal::error([
+            'theme' => 'dark',
+            'title' => 'Login gagal!',
         ]);
+
+        return back();
     }
 
     public function logout(Request $request)
@@ -69,6 +78,11 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('home'); // Sesuaikan dengan route name yang dipakai
+        Swal::success([
+            'theme' => 'dark',
+            'title' => 'Logout berhasil!',
+        ]);
+
+        return redirect()->route('home');
     }
 }

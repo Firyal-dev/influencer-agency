@@ -19,6 +19,9 @@
 
     @livewireStyles
     @stack('styles')
+
+    <!-- sweetalert2
+    @include('sweetalert2::index') -->
 </head>
 
 <body>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Brand;
 use App\Models\Campaign;
+use SweetAlert2\Laravel\Swal;
 
 class BrandCampaignController extends Controller
 {
@@ -80,6 +81,14 @@ class BrandCampaignController extends Controller
         // Clear session
         session()->forget('brand_data');
 
-        return redirect()->route('home')->with('success', 'Campaign anda berhasil dibuat! Kami akan menghubungi anda segera.');
+        Swal::success([
+            'theme' => 'dark',
+            'title' => 'Campaign anda berhasil dibuat!',
+            'text' => 'Kami akan menghubungi anda segera.',
+            'icon' => 'success',
+            'confirmButtonText' => 'Oke'
+        ]);
+        
+        return redirect()->route('home');
     }
 }
